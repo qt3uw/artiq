@@ -16,3 +16,15 @@ class LinkedLED:
     @kernel
     def set_o(self, o):
         rtio_output(self.target_o, o)
+
+    @kernel
+    def flip_led(self):
+        self.set_o(0b01)
+
+    @kernel
+    def link_up(self):
+        self.set_o(0b10)
+
+    @kernel
+    def flip_together(self):
+        self.set_o(0b11)
